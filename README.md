@@ -4,7 +4,7 @@
 **You will need to create a "Config.java" file**
 
 
-You can get your Bearer token and Client ID by doing [this](https://dev.twitch.tv/docs/authentication#getting-tokens) and your oAuth token can be found [here](https://twitchapps.com/tmi/)
+You can get your Bearer token and Client ID by doing [this](https://dev.twitch.tv/docs/authentication#getting-tokens) and setting up your bot [here](https://dev.twitch.tv/console) and your oAuth token can be found [here](https://twitchapps.com/tmi/)
    
     package org.jibble.pircbot;
     /*
