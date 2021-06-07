@@ -1,2 +1,14 @@
 # cmillerbot
- Twitch chatbot based on pIRCbot
+**Twitch chatbot based on pIRCbot**
+
+*You will need to create a "Config.java" file*
+   
+    package org.jibble.pircbot;
+
+    public interface Config {
+    String bearer = "your_bearer_token";
+    String client_id = "your_client_id";
+    String channel = "your_channel";
+    String oAuth = "oauth:your_oauth_token";
+    }
+
