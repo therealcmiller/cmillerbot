@@ -13,7 +13,7 @@ You can get your Bearer token and Client ID by doing [this](https://dev.twitch.t
      * Get oAuth Token from https://twitchapps.com/tmi/
      *
      */
-    public interface Config {
+    public class Config {
     String bearer = "Bearer your_bearer_token";
     String client_id = "your_client_id";
     String channel = "your_channel";
