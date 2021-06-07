@@ -9,8 +9,8 @@ public static String url() throws IOException {
 	URL url = new URL("https://api.twitch.tv/helix/eventsub/subscriptions");
 	HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
 	httpConn.setRequestMethod("GET");
-	httpConn.setRequestProperty("Authorization", "Bearer 6wztp24zv53813vbi292khft9c85v8");
-	httpConn.setRequestProperty("Client-Id", "9wjow729cv1phw7nsd8qppxe8gw45gi");
+	httpConn.setRequestProperty("Authorization", Config.bearer);
+	httpConn.setRequestProperty("Client-Id", Config.client_id);
 		InputStream responseStream = httpConn.getResponseCode() / 100 == 2
 				? httpConn.getInputStream()
 				: httpConn.getErrorStream();
