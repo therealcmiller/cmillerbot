@@ -1,7 +1,7 @@
 # cmillerbot
 **Twitch chatbot based on pIRCbot**
 
-*You will need to create a "Config.java" file*
+**You will need to create a "Config.java" file**
    
     package org.jibble.pircbot;
 
