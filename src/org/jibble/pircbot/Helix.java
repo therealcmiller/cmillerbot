@@ -32,7 +32,7 @@ class Helix {
 		return response;
 		
 	}
-	public String data() {
+	public static String data() {
 		// Creating a JSONParser object
 		JsonParser jsonParser = new JsonParser();
 		try {

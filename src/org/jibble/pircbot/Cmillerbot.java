@@ -55,6 +55,7 @@ public class Cmillerbot extends PircBot {
 	// Arrays.asList(modArray).contains(sender)){
 	// ^for mod only commands^
 
+	@SuppressWarnings("static-access")
 	protected void onMessage(String channel, String sender, String login, String hostname, String message) {
 		Gson gson = new Gson();
 		if (sender == "cmillerbot") {
