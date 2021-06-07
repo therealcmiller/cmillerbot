@@ -49,12 +49,7 @@ public class Cmillerbot extends PircBot {
 	Random rand = new Random();
 	String answer = answers[rand.nextInt(answers.length)];
 	static String followname = null;
-
-	// All ! commands
-	// if(message.startsWith("!command") &&
-	// Arrays.asList(modArray).contains(sender)){
-	// ^for mod only commands^
-
+	String[] blacklist = {"fag", "faggot", "nigger", "rape"};
 	@SuppressWarnings("static-access")
 	protected void onMessage(String channel, String sender, String login, String hostname, String message) {
 		Gson gson = new Gson();
@@ -111,11 +106,7 @@ public class Cmillerbot extends PircBot {
 		 * Subscriptions.url(); System.out.println(result); } catch (IOException e) {
 		 * e.printStackTrace(); } }
 		 */
-		if (message.equalsIgnoreCase("!racist")) {
-			Random num = new Random();
-			sendMessage(channel, num.nextInt(scale.length) + "/10");
-		}
-
+		
 		if (message.equalsIgnoreCase("!test")) {
 			sendMessage(channel, "@" + sender + " Hi! The channel is " + channel + " Testing things, so don't worry.");
 		}
@@ -197,10 +188,6 @@ public class Cmillerbot extends PircBot {
 			}
 		}
 
-		if (message.startsWith("!modlist")) {
-			sendMessage(channel, "/mods");
-		}
-
 		if (message.equals("!feedbot")) {
 			sendMessage(channel, "The bot has been fed by " + sender);
 		}
@@ -223,9 +210,8 @@ public class Cmillerbot extends PircBot {
 		if (message.equals("!multi")) {
 			sendMessage(channel, link);
 		}
-		///////////////////// Poll system? Take each separate line and count
-		///////////////////// results
-		String entireLineMulti = message;
+		///////////////////// Poll system Take each separate line and count results
+				String entireLineMulti = message;
 		String[] splitEntireLinePoll = entireLineMulti.split(" # ");
 		if (message.contains("!resetpoll")) {
 			opt1 = 0;
@@ -268,10 +254,10 @@ public class Cmillerbot extends PircBot {
 			String targetName = splitEntireLineraid[1];
 			String raidMessage = "";
 			for (int i = 2; i < splitEntireLineraid.length; i++) {
-				raidMessage = raidMessage + splitEntireLineraid[i];
+				raidMessage = raidMessage + " " + splitEntireLineraid[i];
 			}
 			sendMessage(channel, "We're raiding @" + targetName + " at https://www.twitch.tv/" + targetName);
-			sendMessage(channel, "Copy and paste the raid message and go there! Wait for me to post it first!");
+			sendMessage(channel, "Copy and paste the raid message and go there! The raid message is: ");
 			sendMessage(channel, raidMessage);
 		}
 
@@ -281,8 +267,9 @@ public class Cmillerbot extends PircBot {
 
 		}
 		/////// Words blacklist, (Has to be a better way to do this?)
-		if (message.contains("rape") || message.contains("faggot") || message.contains("fag")
-				|| message.contains("bieber")) {
+		
+		if (message.contains("rape") || message.contains("faggot") || message.contains("fag"))
+				 {
 			sendMessage(channel, "@" + sender + " Please don't use that word! (purge)");
 			sendMessage(channel, "/timeout " + sender + " 1");
 		}
