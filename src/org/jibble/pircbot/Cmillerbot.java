@@ -49,7 +49,7 @@ public class Cmillerbot extends PircBot {
 	Random rand = new Random();
 	String answer = answers[rand.nextInt(answers.length)];
 	static String followname = null;
-	String[] blacklist = {"fag", "faggot", "nigger", "rape"};
+	String[] blacklist = {"fag", "faggot", "nigger", };
 	@SuppressWarnings("static-access")
 	protected void onMessage(String channel, String sender, String login, String hostname, String message) {
 		Gson gson = new Gson();
