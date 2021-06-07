@@ -28,13 +28,12 @@ public class Caster {
 		@SuppressWarnings("resource")
 		Scanner s = new Scanner(responseStream).useDelimiter("\\A");
 		String response = s.hasNext() ? s.next() : "";
-		//System.out.println(response);
+
 		return response;
 
 	}
 
 	public static String data() {
-		// Creating a JSONParser object
 		JsonParser jsonParser = new JsonParser();
 		try {
 			JsonObject jsonObject = (JsonObject) jsonParser.parse(Caster.url());
