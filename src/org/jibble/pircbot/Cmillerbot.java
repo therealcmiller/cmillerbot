@@ -26,7 +26,7 @@ import PircBot.*;
 public class Cmillerbot extends PircBot {
 
 	public Cmillerbot() {
-		this.setName("cmillerbot");
+		this.setName(Config.botUsername);
 	}
 
 	protected void onJoin(String channel, String sender, String login, String hostname, String message) {

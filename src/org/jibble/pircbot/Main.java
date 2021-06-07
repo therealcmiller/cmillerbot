@@ -12,14 +12,11 @@ public class Main extends PircBot {
 
 		// Now start our bot up.
 		Cmillerbot bot = new Cmillerbot();
-
 		// Enable debugging output.
 		bot.setVerbose(true);
-
 		// Connect to the IRC server.
 		bot.connect("irc.twitch.tv", 6667, Config.oAuth);
 		// Twitch Stuff
-
 		bot.sendRawLineViaQueue("CAP REQ :twitch.tv/membership");
 		bot.sendRawLineViaQueue("CAP REQ :twitch.tv/commands");
 		bot.sendRawLine("CAP REQ :twitch.tv/commands");
