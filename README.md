@@ -10,6 +10,6 @@
     String client_id = "your_client_id";
     String channel = "your_channel";
     String oAuth = "oauth:your_oauth_token";
-    String botUsername = "cmillerbot";
+    String botUsername = "your_bots_username";
     }
 
